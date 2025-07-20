@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const API_URL = import.meta.env.VITE_API_BASE_URL;
+const API_URL2 = import.meta.env.BACKEND_API_URL;
 
 const initialState = {
   isAuthenticated: false,
@@ -29,6 +30,8 @@ export const loginUser = createAsyncThunk(
   "/auth/login",
 
   async (formData) => {
+    console.log(import.meta.env.BACKEND_API_URL);
+    console.log(`${API_URL}`);
     const response = await axios.post(
       `${API_URL}/api/auth/login`,
       formData,
