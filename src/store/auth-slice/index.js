@@ -30,8 +30,6 @@ export const loginUser = createAsyncThunk(
   "/auth/login",
 
   async (formData) => {
-    console.log(import.meta.env.BACKEND_API_URL);
-    console.log(`${API_URL}`);
     const response = await axios.post(
       `${API_URL}/api/auth/login`,
       formData,
